@@ -17,9 +17,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import praw
 import settings
 import json
-reddit = praw.Reddit(client_id=settings.red_client,
-                     client_secret= settings.red_secret,
-                     user_agent='User Agent:script:python.my.data.collection:v1.2.3 (by /u/katarain)')
+
 
 ####App Setup###
 app = Flask(__name__)
