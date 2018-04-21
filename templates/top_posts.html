@@ -1,0 +1,28 @@
+<h1>Here are the top posts for the subreddit</h1>
+
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+<ul>
+{% for p in posts %}
+    <li>{{ p.title }}</a>
+    <form method="POST" action="/delete/{{ p.id }}">
+        {{ form.hidden_tag() }}
+        {{ form.submit() }}
+    </li>
+{% endfor %}
+{% if not posts %}
+There are no posts at this time.
+{% endif %}
+</ul>
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+{% endblock %}

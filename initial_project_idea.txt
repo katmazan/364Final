@@ -1,0 +1,3 @@
+This application will allow users to search the Reddit API by topic and saves lists of subreddits
+they may be interested in. The application also allows users to star certain subreddits if they are particularly
+interesting.  In addition users can choose any saved subreddit and see the top 5 posts on the page.

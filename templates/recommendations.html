@@ -1,0 +1,25 @@
+<h1>Recommendations.  Click to see the top posts on this subreddit</h1>
+
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+<ul>
+{% for s in rec_list %}
+    <li><a href="{{ url_for('hot_posts',sub_id =s.title) }}">{{ s.title }}</a></li>
+     <li>
+        Fav Status: {{ s.favorite }}
+        <form method="POST" action="/update/{{ s.id }}">
+        {{ form.hidden_tag() }}
+        {{ form.submit() }}
+        </form> 
+        
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
